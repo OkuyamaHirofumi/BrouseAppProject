@@ -25,6 +25,8 @@ class ViewController: UIViewController {
             self.webView.loadRequest(urlRequest)
         }
         // Do any additional setup after loading the view, typically from a nib.
+        self.backButton.enabled = self.webView.canGoBack
+        self.forwardButton.enabled = self.webView.canGoForward
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,10 +35,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func goBack(sender: AnyObject) {
+        self.webView.goBack()
     }
     @IBAction func goForward(sender: AnyObject) {
+        self.webView.goForward()
     }
     @IBAction func reload(sender: AnyObject) {
+        self.webView.reload()
     }
 
 }
