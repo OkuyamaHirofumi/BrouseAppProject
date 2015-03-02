@@ -16,30 +16,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WJA-KE-gV0">
-                                <rect key="frame" x="263" y="42" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WJA-KE-gV0">
+                                <rect key="frame" x="10" y="30" width="580" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
                             </textField>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fhQ-mn-Ngq">
-                                <rect key="frame" x="210" y="158" width="240" height="128"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhQ-mn-Ngq">
+                                <rect key="frame" x="0.0" y="70" width="600" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F8u-Ta-8EH">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8u-Ta-8EH">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6cW-9c-Uvo"/>
+                                </constraints>
                                 <items>
-                                    <barButtonItem title="Item" id="L2G-J2-IGl"/>
-                                    <barButtonItem title="Item" id="EG2-mQ-LFU"/>
+                                    <barButtonItem title="←" id="L2G-J2-IGl">
+                                        <connections>
+                                            <action selector="goBack:" destination="BYZ-38-t0r" id="PRu-Br-uYU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="→" id="EG2-mQ-LFU">
+                                        <connections>
+                                            <action selector="goForward:" destination="BYZ-38-t0r" id="1Re-qb-RRw"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="9dF-RE-Rie"/>
-                                    <barButtonItem title="Item" id="hkB-ag-6nR"/>
+                                    <barButtonItem title="Item" systemItem="refresh" id="hkB-ag-6nR">
+                                        <connections>
+                                            <action selector="reload:" destination="BYZ-38-t0r" id="yQ8-us-Nr0"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WJA-KE-gV0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="0EB-IA-khV"/>
+                            <constraint firstItem="F8u-Ta-8EH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5hj-7s-AtT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F8u-Ta-8EH" secondAttribute="bottom" id="P5n-y0-Jzj"/>
+                            <constraint firstAttribute="trailing" secondItem="F8u-Ta-8EH" secondAttribute="trailing" id="T9R-M7-3Pm"/>
+                            <constraint firstAttribute="trailing" secondItem="WJA-KE-gV0" secondAttribute="trailing" constant="10" id="Uwz-2f-cM1"/>
+                            <constraint firstItem="fhQ-mn-Ngq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aL0-h3-0rl"/>
+                            <constraint firstAttribute="trailing" secondItem="fhQ-mn-Ngq" secondAttribute="trailing" id="bgx-9g-BhQ"/>
+                            <constraint firstItem="fhQ-mn-Ngq" firstAttribute="top" secondItem="WJA-KE-gV0" secondAttribute="bottom" constant="10" id="c6v-g5-Qy5"/>
+                            <constraint firstItem="WJA-KE-gV0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="h7r-4P-0zF"/>
+                            <constraint firstItem="F8u-Ta-8EH" firstAttribute="top" secondItem="fhQ-mn-Ngq" secondAttribute="bottom" id="nUe-fP-7dV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="L2G-J2-IGl" id="Set-rI-ArR"/>
+                        <outlet property="forwardButton" destination="EG2-mQ-LFU" id="dXe-Wc-Fln"/>
+                        <outlet property="reloadButton" destination="hkB-ag-6nR" id="OiF-op-u8f"/>
+                        <outlet property="testField" destination="WJA-KE-gV0" id="rE7-Eo-Ktn"/>
+                        <outlet property="webView" destination="fhQ-mn-Ngq" id="MMZ-GK-Kie"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="751" y="493"/>
         </scene>
     </scenes>
 </document>

@@ -407,6 +407,7 @@
 				F87F2D9D1AA49F5000F5D47B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F87F2D9E1AA49F5000F5D47B /* Build configuration list for PBXNativeTarget "BrowseApp2Tests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +416,7 @@
 				F87F2DA01AA49F5000F5D47B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
