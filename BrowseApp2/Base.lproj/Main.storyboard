@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -49,11 +50,16 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2NV-Vh-hij">
+                                <rect key="frame" x="559" y="35" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WJA-KE-gV0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="0EB-IA-khV"/>
                             <constraint firstItem="F8u-Ta-8EH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5hj-7s-AtT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2NV-Vh-hij" secondAttribute="trailing" constant="5" id="Ex5-bt-Uio"/>
+                            <constraint firstItem="2NV-Vh-hij" firstAttribute="centerY" secondItem="WJA-KE-gV0" secondAttribute="centerY" id="IKz-lI-hag"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F8u-Ta-8EH" secondAttribute="bottom" id="P5n-y0-Jzj"/>
                             <constraint firstAttribute="trailing" secondItem="F8u-Ta-8EH" secondAttribute="trailing" id="T9R-M7-3Pm"/>
                             <constraint firstAttribute="trailing" secondItem="WJA-KE-gV0" secondAttribute="trailing" constant="10" id="Uwz-2f-cM1"/>
@@ -65,16 +71,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicater" destination="2NV-Vh-hij" id="leL-F3-aTO"/>
                         <outlet property="backButton" destination="L2G-J2-IGl" id="Set-rI-ArR"/>
                         <outlet property="forwardButton" destination="EG2-mQ-LFU" id="dXe-Wc-Fln"/>
                         <outlet property="reloadButton" destination="hkB-ag-6nR" id="OiF-op-u8f"/>
-                        <outlet property="testField" destination="WJA-KE-gV0" id="rE7-Eo-Ktn"/>
+                        <outlet property="textField" destination="WJA-KE-gV0" id="Rih-i2-eEQ"/>
                         <outlet property="webView" destination="fhQ-mn-Ngq" id="MMZ-GK-Kie"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="751" y="493"/>
+            <point key="canvasLocation" x="446" y="453"/>
         </scene>
     </scenes>
 </document>
